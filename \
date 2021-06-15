@@ -1,0 +1,89 @@
+import random
+
+def main():
+
+    #Computer Variables:
+    computer_Option = ["Rock", "Paper", "Scissors"]
+    computer_Selection = None
+    computer_Score = 0
+
+    #User Variables:
+    user_Option = { 1:"Rock", 2:"Paper", 3:"Scissors"}
+    user_Selection = None
+    user_Score = 0
+
+    #Game State Variables:
+    game_over = False
+    rounds = 0
+
+    while(True):
+        if game_over == True:
+            if user_Score > computer_Score:
+                print("Player Wins!")
+                print("Player Score:", user_Score)
+                print("Computer Score:", computer_Score)
+            elif computer_Score > user_Score:
+                print("Computer Wins!")
+                print("Player Score:", user_Score)
+                print("Computer Score:", computer_Score)
+            else:
+                print("Tie!")
+
+        while user_Selection not in user_Option:
+            print("Player, chose one!")
+            user_Selection = int(input("1. Rock, 2. Paper, 3. Scissors"))
+
+'''
+ the function below needs two parameters...
+ - your **user action** and **computer action** 
+    
+    HINT: the value in your **user action** will either be
+    Rock, Paper or Scissors, same goes for the **computer action**
+
+ex: def sumTwoNums(num1, num2): num1 and num2 are parameters for the
+    sumTwoNums function
+'''
+def determineWinner(user_action, computer_action):
+    '''
+    This function is used to determine the winner of a round
+
+    RULES: 
+        - Rock beats Scissors
+        - Paper beats Rock
+        - Scissors beats Paper
+        - if both the user and computer have the same action its a tie.
+    
+    example scenarios:
+
+        user action -> rock
+        computer action -> paper
+        computer wins
+        =========================
+
+        user action -> scissors
+        computer action -> paper
+        user wins
+        =========================
+
+        user action -> paper
+        computer actin -> paper
+        tie, nobody wins
+    '''
+
+    '''
+    create a set of checks for all possible winning combinations for the user.
+        if the user wins, return the string "user"
+    '''
+    
+    '''
+    create a set of checks for all possible winning combinations for the computer
+        if the computer wins, return the string "computer"
+    '''
+    
+    '''
+    create a set of checks for all possible combinations for a tie.
+        if there is a tie, return the string "tie"
+    '''
+
+
+# call the main function
